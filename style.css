@@ -11,3 +11,10 @@ body {
     margin-top: 1em;
     background-image: linear-gradient(#252525, rgba(0, 0, 0, 0.5), #252525);
 }
+
+
+#myAudio {
+    position: absolute;
+    left: 0;
+    caret-color: #252525;
+}
