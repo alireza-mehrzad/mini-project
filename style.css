@@ -49,3 +49,11 @@ body {
     font-family: sans-serif;
     font-weight: bold;
 }
+
+.summaryP {
+    color: rgb(122, 122, 122);
+    margin: 1em;
+    font-family: sans-serif;
+    text-align: justify;
+    font-size: small;
+}
