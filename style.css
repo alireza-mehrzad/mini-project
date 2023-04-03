@@ -57,3 +57,7 @@ body {
     text-align: justify;
     font-size: small;
 }
+
+.container:hover .summaryP {
+    color: rgb(160, 160, 160);
+}
