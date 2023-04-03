@@ -3,6 +3,13 @@ body {
     background-color: #252525;
 }
 
+#root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2em;
+}
+
 #header {
     position: relative;
     display: flex;
