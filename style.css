@@ -40,3 +40,12 @@ body {
     font-family: monospace;
     font-size: medium;
 }
+
+.bottomDiv {
+    color: rgb(170, 170, 170);
+    margin: 0em 1em 0.25em 1em;
+    color: rgb(170, 170, 170);
+    font-size: 0.75em;
+    font-family: sans-serif;
+    font-weight: bold;
+}
