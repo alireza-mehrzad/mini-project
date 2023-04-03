@@ -61,3 +61,13 @@ body {
 .container:hover .summaryP {
     color: rgb(160, 160, 160);
 }
+
+.summaryTag {
+    display: flex;
+    justify-content: center;
+    color: rgb(122, 73, 73);
+    font-size: medium;
+    font-family: Helvetica, sans-serif;
+    font-weight: 550;
+    background-color: black;
+}
