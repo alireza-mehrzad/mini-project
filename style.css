@@ -71,3 +71,8 @@ body {
     font-weight: 550;
     background-color: black;
 }
+
+.divImg {
+    display: flex;
+    justify-content: center;
+}
