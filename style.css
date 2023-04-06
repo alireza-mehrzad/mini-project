@@ -107,3 +107,20 @@ body {
 #searchForm:hover>.search-btn {
     color: #240101;
 }
+
+.search-btn {
+    text-decoration: none;
+    color: rgb(122, 122, 122);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: small;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #240101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
