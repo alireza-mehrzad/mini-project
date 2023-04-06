@@ -76,3 +76,7 @@ body {
     display: flex;
     justify-content: center;
 }
+
+.divImg {
+    transition: transform 0.2s;
+}
