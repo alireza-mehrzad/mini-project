@@ -107,3 +107,120 @@ function makeEpisodePage(list) {
     summary.textContent = episode.summary.replace(/(<([^>]+)>)/gi, "");
   });
 }
+
+function makeShowPage(list) {
+  const rootElem = document.getElementById("root");
+  list.forEach((show) => {
+    let eachDiv = document.createElement(`div`);
+    let containerDiv = rootElem.appendChild(eachDiv);
+    containerDiv.setAttribute(`id`, `${show.id}`);
+    containerDiv.setAttribute(`class`, `container show`);
+    containerDiv.setAttribute(`style`, `display: initial;`);
+
+    //jump to episodes
+    containerDiv.addEventListener(`click`, () => {
+      let containerDiv = document.getElementsByClassName("container");
+      let container = Array.from(containerDiv);
+      console.log(container);
+      container.map((x) => {
+        x.style.display = `none`;
+        // console.log(x);
+      });
+      setup(`https://api.tvmaze.com/shows/${show.id}/episodes`);
+      updateResult();
+    });
+
+    //take the name of each show and put it inside containerDiv
+    let nameParagraph = document.createElement(`p`);
+    containerDiv.appendChild(nameParagraph);
+    nameParagraph.setAttribute(`class`, `name`);
+    nameParagraph.textContent = `${show.name}`;
+
+    //film rating and runtime
+    let ratingP = paragraph();
+    containerDiv.appendChild(ratingP);
+    ratingP.setAttribute(`class`, `episodeCode rating`);
+    ratingP.textContent = `Average Rate:   ${show.rating.average}`;
+
+    //film runtime
+    let runtimeP = paragraph();
+    containerDiv.appendChild(runtimeP);
+    runtimeP.setAttribute(`class`, `episodeCode runtime`);
+    runtimeP.textContent = `Runtime:  ${show.runtime}`;
+
+    //film's genre
+    let genreP = paragraph();
+    containerDiv.appendChild(genreP);
+    genreP.setAttribute(`class`, `episodeCode runtime`);
+    genreP.id = `genre`;
+    genreP.textContent = `Genres:  ${show.genres}`;
+
+    //to fix positioning
+    let br = document.createElement(`br`);
+    let br2 = document.createElement(`br`);
+    containerDiv.appendChild(br2);
+
+    //take the show Images
+    let showImg = document.createElement(`img`);
+    let divImg = document.createElement(`div`);
+    divImg.appendChild(showImg);
+    containerDiv.appendChild(divImg);
+    divImg.setAttribute(`class`, `divImg`);
+    showImg.setAttribute(`class`, `showImg`);
+    showImg.src = show.image.medium;
+    showImg.alt = `image`;
+    containerDiv.appendChild(br);
+
+    //take the summary of each show
+    let showSummary = document.createElement(`article`);
+    let summaryArticle = containerDiv.appendChild(showSummary);
+    showSummary.setAttribute(`class`, `summary`);
+
+    //summary tag inside article
+    let summaryTagP = document.createElement(`p`);
+    summaryArticle.appendChild(summaryTagP);
+    summaryTagP.setAttribute(`class`, `summaryTag`);
+    summaryTagP.textContent = `About ${show.name}`;
+
+    //actual summary inside article
+    let summary = document.createElement(`p`);
+    summaryArticle.appendChild(summary);
+    summary.setAttribute(
+      `id`,
+      `summaryPS${codeCorrection(show.season)}E${codeCorrection(show.number)}`
+    );
+    summary.setAttribute(`class`, `summaryP`);
+    summary.textContent = show.summary.replace(/(<([^>]+)>)/gi, "");
+
+    //features div
+    let br3 = document.createElement(`br`);
+    let br4 = document.createElement(`br`);
+    let br5 = document.createElement(`br`);
+    containerDiv.appendChild(br3);
+    containerDiv.appendChild(br4);
+    containerDiv.appendChild(br5);
+    let features = document.createElement(`div`);
+    containerDiv.appendChild(features);
+    features.setAttribute(`class`, `features`);
+
+    //film status
+    let statusP = paragraph();
+    features.appendChild(statusP);
+    statusP.setAttribute(`class`, `bottomDiv`);
+    statusP.textContent = `Status:  ${show.status}`;
+
+    //film language
+    let languageP = paragraph();
+    features.appendChild(languageP);
+    languageP.setAttribute(`class`, `bottomDiv`);
+    languageP.textContent = `Language:  ${show.language}`;
+  });
+}
+
+function codeCorrection(x) {
+  if (x < 10) {
+    return `0${x}`;
+  } else {
+    return x;
+  }
+}
