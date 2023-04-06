@@ -124,3 +124,16 @@ body {
     align-items: center;
 }
 
+#searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: white;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 13px;
+    transition: 0.4s;
+    line-height: 3em;
+    width: 0;
+}
