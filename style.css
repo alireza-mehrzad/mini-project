@@ -177,3 +177,22 @@ select {
 #showSelect {
     left: 10.5%;
 }
+
+.home {
+    position: absolute;
+    border: none;
+    display: block;
+    background: #3d0202;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: rgb(192, 192, 192);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 12px;
+    text-decoration: none;
+    line-height: 3.59em;
+    left: 50%;
+    top: 2em;
+    transition: 0.2s;
+}
