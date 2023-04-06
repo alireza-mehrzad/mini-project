@@ -84,3 +84,14 @@ body {
 .container:hover .divImg {
     transform: scale(1.22);
 }
+
+#searchForm {
+    position: absolute;
+    top: 1.5em;
+    margin-top: 1.3em;
+    transform: translate(-50%, -50%);
+    background: #240101;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
