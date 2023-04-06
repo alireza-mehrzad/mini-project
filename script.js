@@ -420,3 +420,22 @@ function paragraph() {
   return document.createElement(`p`);
 }
 
+function home() {
+  let anchor = document.createElement(`a`);
+  header.appendChild(anchor);
+  anchor.setAttribute(`href`, `/`);
+  anchor.setAttribute(`class`, `home`);
+  anchor.textContent = `..Home`;
+}
+
+// make paragraphs
+function paragraph() {
+  return document.createElement(`p`);
+}
+
+function onLoad() {
+  getData(`https://api.tvmaze.com/shows`);
+}
+
+window.onload = onLoad;
+
