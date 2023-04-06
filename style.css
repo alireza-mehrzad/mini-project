@@ -95,3 +95,15 @@ body {
     border-radius: 40px;
     padding: 10px;
 }
+
+::placeholder {
+    color: rgb(122, 122, 122);
+}
+
+#searchForm:hover>#searchInput {
+    width: 15em;
+}
+
+#searchForm:hover>.search-btn {
+    color: #240101;
+}
