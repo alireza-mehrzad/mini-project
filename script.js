@@ -361,3 +361,47 @@ function selectEpisode(episode) {
     updateResult();
   });
 }
+
+
+function selectShow(show) {
+  let select = document.createElement(`select`);
+  header.appendChild(select);
+  select.setAttribute(`id`, `showSelect`);
+  select.setAttribute(`class`, `select`);
+  let firstOption = document.createElement(`option`);
+  select.appendChild(firstOption);
+  firstOption.setAttribute(`id`, `firstShow`);
+  firstOption.setAttribute(`value`, `select an option`);
+  firstOption.textContent = `Show Selector:`;
+
+  //sorting  in alphabetical order case-insensitive
+  let showArray = Array.from(show);
+  let sort = showArray.sort(function (a, b) {
+    var nameA = a.name.toUpperCase();
+    var nameB = b.name.toUpperCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  sort.forEach((x) => {
+    let option = document.createElement(`option`);
+    option.setAttribute(`value`, x.id);
+    option.setAttribute(`class`, `option`);
+    select.appendChild(option);
+    option.textContent = `${x.name} - Type: ${x.type}`;
+  });
+
+  //changes after select a show on show selector
+  select.addEventListener(`change`, () => {
+    let containerDiv = document.getElementsByClassName("container");
+    container = Array.from(containerDiv);
+    container.map((x) => (x.style.display = `none`));
+    setup(`https://api.tvmaze.com/shows/${select.value}/episodes`);
+    updateResult();
+  });
+}
