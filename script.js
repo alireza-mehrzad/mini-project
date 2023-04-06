@@ -313,3 +313,20 @@ function result() {
     )} / ${codeCorrection(container.length)}`;
   });
 }
+
+
+function updateResult() {
+  setTimeout(function () {
+    let containerDiv = document.getElementsByClassName(`container`);
+    let container = Array.from(containerDiv);
+    let resultParagraph = document.getElementById(`result`);
+    // console.log(container.filter((x) => x.style.display != `none`));
+    // console.log(container);
+    resultParagraph.innerHTML = `${codeCorrection(
+      container.filter((x) => x.style.cssText === `display: initial;`).length
+    )} / ${codeCorrection(
+      container.filter((x) => x.style.cssText !== `display: none;`).length
+    )}`;
+    // console.log(container.filter((x) => x.style.cssText === `display: initial;`));
+  }, 400);
+}
