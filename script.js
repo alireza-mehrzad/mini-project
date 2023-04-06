@@ -11,3 +11,13 @@ function getData(URL) {
       selectEpisode(json);
     });
 }
+
+
+function setup(URL) {
+  fetch(URL)
+    .then((response) => response.json())
+    .then((json) => {
+      makeEpisodePage(json);
+      selectEpisode(json);
+    });
+}
