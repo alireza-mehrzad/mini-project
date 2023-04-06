@@ -151,3 +151,29 @@ body {
     height: 60px;
     border-radius: 50%;
 }
+
+select {
+    -webkit-writing-mode: none;
+    -webkit-appearance: none;
+    position: absolute;
+    background: #240101;
+    color: rgb(192, 192, 192);
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 13px;
+    height: 2em;
+    border: 0.25em solid #240101;
+    border-radius: 3em;
+    cursor: s-resize;
+    top: 3.5em;
+    outline: 0em;
+    width: 23em;
+}
+
+#episodeSelect {
+    right: 10.5%;
+}
+
+#showSelect {
+    left: 10.5%;
+}
