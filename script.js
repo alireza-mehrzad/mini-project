@@ -330,3 +330,34 @@ function updateResult() {
     // console.log(container.filter((x) => x.style.cssText === `display: initial;`));
   }, 400);
 }
+
+
+function selectEpisode(episode) {
+  let select = document.createElement(`select`);
+  header.appendChild(select);
+  select.setAttribute(`id`, `episodeSelect`);
+  select.setAttribute(`class`, `select`);
+  let firstOption = document.createElement(`option`);
+  select.appendChild(firstOption);
+  firstOption.setAttribute(`id`, `firstEpisode`);
+  firstOption.setAttribute(`value`, `select an option`);
+  firstOption.textContent = `Episode Selector:`;
+  episode.forEach((x) => {
+    let option = document.createElement(`option`);
+    option.setAttribute(`value`, x.id);
+    option.setAttribute(`class`, `option`);
+    select.appendChild(option);
+    option.textContent = `S${codeCorrection(x.season)}E${codeCorrection(
+      x.number
+    )} - ${x.name}`;
+  });
+
+  select.addEventListener(`change`, (e) => {
+    let targetDiv = document.getElementById(`${e.target.value}`);
+    let containerDiv = document.getElementsByClassName("container");
+    container = Array.from(containerDiv);
+    container.map((x) => (x.style.display = `none`));
+    targetDiv.style.display = `initial`;
+    updateResult();
+  });
+}
