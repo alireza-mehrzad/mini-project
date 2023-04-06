@@ -137,3 +137,9 @@ body {
     line-height: 3em;
     width: 0;
 }
+
+.result {
+    position: absolute;
+    color: rgb(192, 192, 192);
+    z-index: 1;
+}
