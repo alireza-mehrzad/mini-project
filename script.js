@@ -405,3 +405,18 @@ function selectShow(show) {
     updateResult();
   });
 }
+
+
+function home() {
+  let anchor = document.createElement(`a`);
+  header.appendChild(anchor);
+  anchor.setAttribute(`href`, `/`);
+  anchor.setAttribute(`class`, `home`);
+  anchor.textContent = `..Home`;
+}
+
+// make paragraphs
+function paragraph() {
+  return document.createElement(`p`);
+}
+
