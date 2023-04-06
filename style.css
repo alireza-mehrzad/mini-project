@@ -196,3 +196,10 @@ select {
     top: 2em;
     transition: 0.2s;
 }
+
+.home:hover {
+    color: white;
+    letter-spacing: 2px;
+    width: 65px;
+    box-shadow: 0px 0px 15px #856161;
+}
