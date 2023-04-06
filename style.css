@@ -80,3 +80,7 @@ body {
 .divImg {
     transition: transform 0.2s;
 }
+
+.container:hover .divImg {
+    transform: scale(1.22);
+}
